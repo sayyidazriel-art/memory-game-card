@@ -42,8 +42,10 @@ int main() {
         scanf("%d", &pilihan);
 
         switch (pilihan) {
-            case 1: penjelasanGame(); break;
-            case 2: printf("Terima kasih!\n"); return 0;
+            case 1: penjelasanGame();
+                    break;
+            case 2: printf("Terima kasih!\n");
+                    return 0;
             default: printf("Pilihan tidak valid!\n");
         }
     }
