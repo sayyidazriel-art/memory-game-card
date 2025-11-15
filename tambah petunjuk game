@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void penjelasanGame() {
+    system(CLEAR);
+    printf("=================================== PENJELASAN GAME ===================================\n\n");
+
+    printf("Memory Game adalah permainan mencocokkan pasangan kartu.\n");
+    printf("Tujuan permainan: Temukan semua pasangan kartu dengan langkah sesedikit mungkin.\n\n");
+
+    printf("Aturan permainan:\n");
+    printf("1. Pada awal game semua kartu tertutup.\n");
+    printf("2. Setiap giliran, pilih dua posisi kartu.\n");
+    printf("3. Jika dua kartu sama, maka kartu tetap terbuka.\n");
+    printf("4. Jika dua kartu berbeda, maka kartu akan menutup kembali.\n");
+    printf("5. Permainan selesai ketika semua kartu terbuka.\n\n");
+
+    printf("Kontrol:\n");
+    printf("- Pilih kartu dengan memasukkan nomor posisi kartu.\n");
+    printf("- Jika ingin keluar saat bermain, masukkan: 0 0\n");
+    printf("- Setelah membuka dua kartu, tekan Enter untuk melanjutkan.\n\n");
+
+    printf("Skor:\n");
+    printf("- Skor dihitung berdasarkan langkah.\n");
+    printf("- Semakin sedikit langkah, maka semakin tinggi skor.\n\n");
+
+    printf("Tekan Enter untuk kembali...\n");
+    printf("=======================================================================================");
+    getchar(); getchar();
+}
+
+int main() {
+    penjelasanGame();
+
+    int pilihan;
+
+    while (1) {
+        printf("\n=== MEMORY GAME ===\n");
+        printf("1. Petunjuk game\n");
+        printf("2. Keluar\n");
+        printf("Pilih: ");
+        scanf("%d", &pilihan);
+
+        switch (pilihan) {
+            case 1: penjelasanGame(); break;
+            case 2: printf("Terima kasih!\n"); return 0;
+            default: printf("Pilihan tidak valid!\n");
+        }
+    }
+}
