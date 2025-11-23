@@ -4,29 +4,24 @@
 void penjelasanGame() {
     system(CLEAR);
     printf("=================================== PENJELASAN GAME ===================================\n\n");
-
     printf("Memory Game adalah permainan mencocokkan pasangan kartu.\n");
-    printf("Tujuan permainan: Temukan semua pasangan kartu dengan langkah sesedikit mungkin.\n\n");
+    printf("Tujuan: Temukan semua pasangan kartu dengan langkah sesedikit mungkin.\n\n");
 
-    printf("Aturan permainan:\n");
-    printf("1. Pada awal game semua kartu tertutup.\n");
-    printf("2. Setiap giliran, pilih dua posisi kartu.\n");
-    printf("3. Jika dua kartu sama, maka kartu tetap terbuka.\n");
-    printf("4. Jika dua kartu berbeda, maka kartu akan menutup kembali.\n");
-    printf("5. Permainan selesai ketika semua kartu terbuka.\n\n");
+    printf("Aturan:\n");
+    printf("1. Semua kartu tertutup di awal.\n");
+    printf("2. Pilih dua posisi.\n");
+    printf("3. Jika cocok, tetap terbuka.\n");
+    printf("4. Jika tidak, menutup kembali.\n\n");
 
     printf("Kontrol:\n");
-    printf("- Pilih kartu dengan memasukkan nomor posisi kartu.\n");
-    printf("- Jika ingin keluar saat bermain, masukkan: 0 0\n");
-    printf("- Setelah membuka dua kartu, tekan Enter untuk melanjutkan.\n\n");
+    printf("- Pilih kartu dengan memasukkan nomor.\n");
+    printf("- Masukkan 'q' jika ingin keluar.\n\n");
 
-    printf("Skor:\n");
-    printf("- Skor dihitung berdasarkan langkah.\n");
-    printf("- Semakin sedikit langkah, maka semakin tinggi skor.\n\n");
+    printf("Skor berdasar jumlah langkah.\n\n");
 
-    printf("Tekan Enter untuk kembali...\n");
-    printf("=======================================================================================");
-    getchar(); getchar();
+    printf("Tekan Enter untuk kembali...");
+    clearInput();
+    getchar();
 }
 
 int main() {
