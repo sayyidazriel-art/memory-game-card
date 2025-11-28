@@ -34,6 +34,57 @@ void shuffle(char *cards, int size) {
     }
 }
 
+void tampilkanSkor() {
+    loadSkor();
+
+    for (int i = 0; i < jumlahSkor - 1; i++) {
+        for (int j = i + 1; j < jumlahSkor; j++) {
+            if (papanSkor[i].level > papanSkor[j].level ||
+               (papanSkor[i].level == papanSkor[j].level &&
+                papanSkor[i].skor > papanSkor[j].skor))
+            {
+                Score tmp = papanSkor[i];
+                papanSkor[i] = papanSkor[j];
+                papanSkor[j] = tmp;
+            }
+        }
+    }
+
+    system(CLEAR);
+    printf("=========== Papan Skor ===========\n");
+    printf("%-15s | %-5s | %-5s\n", "Nama", "Lvl", "Skor");
+    printf("----------------------------------\n");
+
+    for (int i = 0; i < jumlahSkor; i++) {
+        printf("%-15s | %-5d | %-5d\n",
+               papanSkor[i].nama,
+               papanSkor[i].level,
+               papanSkor[i].skor);
+    }
+
+    printf("\nTekan Enter untuk kembali...");
+    clearInput();
+    getchar();
+}
+
+void tampilkanBoard(char *cards, int *open, int size) {
+    system(CLEAR);
+    printf("=========== MEMORY GAME ===========\n\n");
+
+    int side = sqrt(size);
+
+    for (int i = 0; i < size; i++) {
+        if (open[i])
+            printf(" [ %c] ", cards[i]);
+        else
+            printf(" [%2d] ", i + 1);
+
+        if ((i + 1) % side == 0)
+            printf("\n");
+    }
+    printf("\n");
+}
+
 void penjelasanGame() {
     system(CLEAR);
     printf("=================================== PENJELASAN GAME ===================================\n\n");
