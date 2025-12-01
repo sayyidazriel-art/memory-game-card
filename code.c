@@ -34,6 +34,40 @@ void shuffle(char *cards, int size) {
     }
 }
 
+void simpanSkor(char *nama, int level, int skor) {
+    FILE *file = fopen("papan_score.txt", "a");
+    if (!file) return;
+    fprintf(file, "%s %d %d\n", nama, level, skor);
+    fclose(file);
+}
+
+void loadSkor() {
+    FILE *file = fopen("papan_score.txt", "r");
+    if (!file) return;
+
+    jumlahSkor = 0;
+    while (fscanf(file, "%s %d %d",
+                  papanSkor[jumlahSkor].nama,
+                  &papanSkor[jumlahSkor].level,
+                  &papanSkor[jumlahSkor].skor) != EOF)
+    {
+        jumlahSkor++;
+        if (jumlahSkor >= MAX) break;
+    }
+    fclose(file);
+}
+
+void resetSkor() {
+    FILE *file = fopen("papan_score.txt", "w");
+    if (!file) return;
+    fclose(file);
+
+    printf("\n===== Papan skor berhasil dibersihkan! =====\n");
+    printf("Tekan Enter untuk kembali...");
+    clearInput();
+    getchar();
+}
+
 void tampilkanSkor() {
     loadSkor();
 
